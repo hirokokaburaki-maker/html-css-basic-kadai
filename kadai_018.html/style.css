@@ -1,0 +1,83 @@
+/* id名「top」に対する装飾 */
+#top {
+  width: 800px;           /* 横幅を800pxに設定 */
+  background-color: #dcc9f4; /* 背景色を設定 */
+  margin: 20px auto;      /* 上下に20px、左右はautoで中央配置 */
+  text-align: center;     /* 中にあるp要素を中央揃えにする */
+}
+
+/* class名「top-child」に対する装飾 */
+.top-child {
+  width: 20percent;       /* 親要素の20%の幅に設定 */
+  background-color: #ffd9df; /* 背景色を設定 */
+  display: inline-block;  /* 3つのp要素を横並びにする */
+}
+
+/* --- Step4-1 & 4-2: middleセクションの設定 --- */
+
+#middle {
+  width: 800px;
+  height: 800px;
+  margin: 20px auto;      /* 上下20px、左右中央 */
+  background-color: #ffd9df;
+  position: relative;     /* 子要素の配置の基準にする */
+}
+
+/* 子要素（01, 02, 03）共通の装飾 */
+#middle-child01,
+#middle-child02,
+#middle-child03 {
+  width: 200px;
+  height: 200px;
+  background-color: #87ceeb;
+  position: absolute;     /* 親要素を基準に配置する */
+}
+
+/* 各子要素の具体的な位置指定 */
+#middle-child01 {
+  top: 100px;
+  left: 100px;
+}
+
+#middle-child02 {
+  top: 300px;
+  left: 300px;
+}
+
+#middle-child03 {
+  top: 500px;
+  left: 500px;
+}
+
+/* --- Step5-1 & 5-2: bottomセクションの設定 --- */
+
+#bottom {
+  width: 800px;
+  height: 300px;
+  margin: 20px auto;      /* 中央配置 */
+  background-color: #87ceeb;
+  /* 子要素がrelativeなので、親にpositionを書かなくてもOK（今回はみ出しを確認するため） */
+}
+
+/* 子要素（01, 02, 03）共通の装飾 */
+#bottom-child01,
+#bottom-child02,
+#bottom-child03 {
+  width: 400px;
+  height: 100px;
+  background-color: #e5dcf0;
+}
+
+/* 各子要素の「本来の場所」からの移動 */
+
+/* 01は移動なし（そのまま） */
+
+#bottom-child02 {
+  position: relative;     /* 相対配置 */
+  left: 200px;            /* 本来の場所から左に200pxずらす */
+}
+
+#bottom-child03 {
+  position: relative;     /* 相対配置 */
+  left: 400px;            /* 本来の場所から左に400pxずらす */
+}
