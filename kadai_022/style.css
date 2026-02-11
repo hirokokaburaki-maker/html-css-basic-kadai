@@ -1,0 +1,107 @@
+/* Step3. スタイルの下準備 */
+
+/* h1, p, body要素の余白をリセット */
+h1, p, body {
+    margin: 0;
+}
+
+/* 記事内の全てのp要素とa要素のフォントサイズを20pxにする */
+p, a {
+    font-size: 20px;
+}
+
+/* Step4. header部分のスタイル */
+
+header {
+    margin-bottom: 20px;      /* 下の余白を20pxに設定 */
+    background-color: rgb(244, 79, 79); /* 背景色を赤色系に設定 */
+    text-align: center;       /* 中の要素を中央揃えにする */
+}
+
+/* h1要素の文字色を白に設定 */
+header h1 {
+    color: rgb(255, 255, 255);
+}
+
+/* Step5. main部分のスタイル */
+
+main {
+    padding: 10px; /* 上下左右の余白10px */
+}
+
+#parent {
+    display: flex; /* Flexコンテナにする */
+    justify-content: space-around; /* 両端を含め均等に配置 */
+}
+
+.contents {
+    border: 3px solid rgb(238, 204, 204); /* 太さ3px、実線、指定色 */
+    flex-basis: 25%; /* 幅を親要素の25%に設定 */
+    padding: 10px 15px; /* 上下10px、左右15px */
+    margin: 20px 0; /* 上下20px、左右0 */
+    text-align: center; /* 中の要素を中央揃え */
+}
+
+/* h2要素の装飾 */
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122); /* 太さ3px、点線、指定色 */
+}
+
+/* h2の前に「●」を表示 */
+h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+}
+
+/* 2番目のp要素の最初の1文字（「傘」など）を装飾 */
+.contents p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+}
+
+/* 画像のスタイル */
+.contents img {
+    margin: 10px 0;
+    width: 70%;
+}
+
+/* Step6. フッター部分のスタイル */
+
+footer {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+}
+
+/* 訪問済みリンクの色 */
+footer a:visited {
+    color: rgb(193, 234, 251);
+}
+
+/* マウスが乗った時の色 */
+footer a:hover {
+    color: rgb(245, 178, 168);
+}
+
+/* Step7. レスポンシブ対応のスタイル */
+
+@media screen and (max-width: 768px) {
+    /* h2のフォントサイズを30pxにする */
+    h2 {
+        font-size: 30px;
+    }
+
+    /* pのフォントサイズを25pxにする */
+    p {
+        font-size: 25px;
+    }
+
+    /* id名parent内の要素を縦に並べる */
+    #parent {
+        flex-direction: column;
+    }
+}
